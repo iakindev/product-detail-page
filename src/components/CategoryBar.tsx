@@ -5,9 +5,25 @@ interface Props {
 }
 
 const CategoryBar: React.FC<Props> = ({ trail }) => (
-  <h3 className="font-bold font-sans subpixel-antialiased" style={{ color: '#6E757F' }}>
-    {trail.map((category, i) => `${category.toUpperCase()} ${i + 1 < trail.length ? ' > ' : ''}`)}
-  </h3>
+  <>
+    {trail.map((category, i) => {
+      return (
+        <>
+          <button
+            className="font-bold font-sans subpixel-antialiased inline text-gray-600 hover:text-gray-500"
+            onClick={() => alert(`Clicked ${category}`)}
+          >
+            {category.toUpperCase()}
+          </button>
+          {i + 1 !== trail.length && (
+            <span className="px-2" style={{ color: '#6E757F' }}>
+              &gt;
+            </span>
+          )}
+        </>
+      );
+    })}
+  </>
 );
 
 export default CategoryBar;

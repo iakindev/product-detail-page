@@ -10,6 +10,7 @@ import Searchbar from './components/Searchbar';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
 import CategoryBar from './components/CategoryBar';
+import ProductPage from './components/ProductPage';
 
 function App() {
   return (
@@ -28,8 +29,10 @@ function App() {
         </Navmenu>
         <Profile />
       </Navbar>
-      {/* In production, I would get trail property from history from React Router */}
-      <CategoryBar trail={['home', 'test']} />
+      <ProductPage>
+        {/* In production, I would get trail property from history from React Router */}
+        <CategoryBar trail={['home', 'men', 'sneaker']} />
+      </ProductPage>
     </Container>
   );
 }
