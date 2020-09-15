@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from './components/Container';
+import './style/custom.css';
+import './style/tailwind.output.css';
+import Navbar from './components/Navbar';
+import Logo from './components/Logo';
+import Navmenu from './components/Navmenu';
+import NavItem from './components/NavItem';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Navbar>
+        <Logo />
+        <Navmenu>
+          <NavItem>Women</NavItem>
+          <NavItem>Men</NavItem>
+          <NavItem>Children</NavItem>
+        </Navmenu>
+      </Navbar>
+    </Container>
   );
 }
 

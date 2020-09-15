@@ -13,13 +13,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "tailwindcss": "^1.8.10",
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "build:tailwind": "tailwindcss build src/style/tailwind.css -o src/style/tailwind.output.css",
+    "prestart": "yarn build:tailwind",
+    "prebuild": "yarn build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gen-icon-components": "svgr --typescript src/assets --icon --replace-attr-values \"#000=currentColor\" -d src/components/icons"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.4.0"
   }
 }

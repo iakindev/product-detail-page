@@ -1,0 +1,13 @@
+html {
+  background-color: #d7dbe7;
+}
+
+@media (min-width: 1024px) {
+  .rounded-xl {
+    border-radius: 3em;
+  }
+}
+
+.text-nav-gray {
+  color: #6d747e;
+}
