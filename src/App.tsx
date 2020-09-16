@@ -41,7 +41,14 @@ function App() {
             'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
           ]}
         />
-        <Details title="Lost In Space" seller="DOGO Store" availableSizes={[41, 42, 43]} />
+        <Details
+          product={{
+            productId: 'dgsnk016-003',
+            title: 'Lost In Space',
+            seller: 'DOGO Store',
+            availableSizes: [41, 42, 43],
+          }}
+        />
       </ProductPage>
     </Container>
   );
