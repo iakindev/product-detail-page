@@ -5,12 +5,12 @@ interface Props {
 }
 
 const CategoryBar: React.FC<Props> = ({ trail }) => (
-  <>
+  <div className="mt-8">
     {trail.map((category, i) => {
       return (
         <>
           <button
-            className="font-bold font-sans subpixel-antialiased inline text-gray-600 hover:text-gray-500"
+            className="text-lg tracking-wider font-bold font-mono subpixel-antialiased inline text-gray-600 hover:text-gray-500"
             onClick={() => alert(`Clicked ${category}`)}
           >
             {category.toUpperCase()}
@@ -23,7 +23,7 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
         </>
       );
     })}
-  </>
+  </div>
 );
 
 export default CategoryBar;

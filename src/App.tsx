@@ -12,6 +12,7 @@ import Profile from './components/Profile';
 import CategoryBar from './components/CategoryBar';
 import ProductPage from './components/ProductPage';
 import Carousel from './components/Carousel';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -30,9 +31,9 @@ function App() {
         </Navmenu>
         <Profile />
       </Navbar>
+      {/* In production, I would get trail property from history from React Router */}
+      <CategoryBar trail={['home', 'men', 'sneaker']} />
       <ProductPage>
-        {/* In production, I would get trail property from history from React Router */}
-        <CategoryBar trail={['home', 'men', 'sneaker']} />
         <Carousel
           images={[
             'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
@@ -40,6 +41,7 @@ function App() {
             'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
           ]}
         />
+        <Details title="Lost In Space" seller="DOGO Store" />
       </ProductPage>
     </Container>
   );

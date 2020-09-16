@@ -9,8 +9,13 @@ interface Props {
 
 const Carousel: React.FC<Props> = ({ images }) => {
   return (
-    <CarouselProvider naturalSlideWidth={10} naturalSlideHeight={10} totalSlides={3}>
-      <Slider className="rounded-xl sm:w-full md:w-7/12 shadow-2xl mt-4">
+    <CarouselProvider
+      naturalSlideWidth={10}
+      naturalSlideHeight={10}
+      totalSlides={3}
+      className="flex-start flex-basis-60p"
+    >
+      <Slider className="rounded-xl sm:w-full md:w-full shadow-2xl mt-4">
         {/* For slides */}
         {images.map((image, index) => {
           return (
@@ -20,11 +25,14 @@ const Carousel: React.FC<Props> = ({ images }) => {
           );
         })}
       </Slider>
-      <div className="flex justify-between sm:w-full md:w-7/12">
+      <div className="justify-between sm:w-full md:w-full grid grid-cols-3 gap-8">
         {/* For thumbnails */}
         {images.map((image, index) => {
           return (
-            <Dot slide={index} className="mt-8 w-48 h-48 rounded-2lg overflow-hidden shadow-2xl">
+            <Dot
+              slide={index}
+              className="mt-8 w-24 h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-2lg overflow-hidden shadow-2xl"
+            >
               <ImageFadeIn src={image} className="object-contain w-full h-full inline-block" />
             </Dot>
           );

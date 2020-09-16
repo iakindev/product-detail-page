@@ -10,6 +10,10 @@ html {
   .product-image {
     position: absolute;
   }
+
+  .flex-basis-60p {
+    flex-basis: 60%;
+  }
 }
 
 @media (orientation: portrait) {
