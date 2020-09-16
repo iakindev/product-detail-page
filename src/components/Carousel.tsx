@@ -31,7 +31,7 @@ const Carousel: React.FC<Props> = ({ images }) => {
           return (
             <Dot
               slide={index}
-              className="mt-8 w-24 h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-2lg overflow-hidden shadow-2xl"
+              className="mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-2lg overflow-hidden shadow-2xl"
             >
               <ImageFadeIn src={image} className="object-contain w-full h-full inline-block" />
             </Dot>
