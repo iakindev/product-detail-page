@@ -7,7 +7,7 @@ const Searchbar: React.FC = () => (
     style={{ borderColor: '#E3E4E8' }}
   >
     <Search style={{ color: '#9EA1A8' }} />
-    <input className="w-40 pl-1 text-lg" placeholder="Search" />
+    <input className="w-40 pl-1 text-lg outline-none" placeholder="Search" />
   </div>
 );
 
