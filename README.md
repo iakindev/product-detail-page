@@ -16,3 +16,11 @@ Original Design: [Product Page by Vishnu Prasad](https://dribbble.com/shots/1412
 ![Desktop](./src/assets/mobile.png)
 
 </details>
+
+### [See live demo](https://iakindev.github.io/product-detail-page/)
+
+### Instructions
+
+- Run `yarn` to install dependencies
+- Run `yarn start` to start development server
+- Run `yarn build` if you want to build it and pack it up
