@@ -21,11 +21,13 @@ const Price: React.FC<Props> = ({ price, discount }) => (
       )}
     </div>
     {/* Discount Rate */}
-    <div className="h-12 rounded-lg mt-2">
-      <HighlightContainer nobg nocolor className="font-mono bg-blue-100 w-full font-semibold">
-        Discount: -%{discount?.rate}
-      </HighlightContainer>
-    </div>
+    {discount && (
+      <div className="h-12 rounded-lg mt-2">
+        <HighlightContainer nobg nocolor className="font-mono bg-blue-100 w-full font-semibold">
+          Discount: -%{discount?.rate}
+        </HighlightContainer>
+      </div>
+    )}
   </>
 );
 

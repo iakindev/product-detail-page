@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainContainer from './components/MainContainer';
 import './style/custom.css';
 import './style/tailwind.output.css';
@@ -15,8 +15,11 @@ import Carousel from './components/Carousel';
 import Details from './components/Details';
 import Container from './components/Container';
 import Comment from './components/Comment';
+import CartContext, { Product } from './context/CartContext';
 
-function App() {
+const App: React.FC = () => {
+  const [cart, setCart] = useState<Product[]>([]);
+
   return (
     <MainContainer>
       <Container center>
@@ -30,7 +33,9 @@ function App() {
             {/* In production, I would get count property initialy from API, 
           propably with seperate Auth component which would fetch User from API and
           store the User in Context API or Redux Store */}
-            <Cart count={0} />
+            <CartContext.Provider value={{ cart, setCart }}>
+              <Cart count={cart.length} />
+            </CartContext.Provider>
           </Navmenu>
           {/* I have manually added ml-6 here. Because initially this component was in Navmenu
 but Navmenu has overflow-hidden css. So it was blocking this component's shadow. */}
@@ -46,14 +51,23 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
               'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
             ]}
           />
-          <Details
-            product={{
-              productId: 'dgsnk016-003',
-              title: 'Lost In Space',
-              seller: 'DOGO Store',
-              availableSizes: [41, 42, 43],
-            }}
-          />
+          <CartContext.Provider value={{ cart, setCart }}>
+            <Details
+              product={{
+                id: 'dgsnk016-003',
+                name: 'Lost In Space',
+                seller: 'DOGO Store',
+                availableSizes: [41, 42, 43],
+                images: [
+                  'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
+                  'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
+                  'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
+                ],
+                price: 419.99,
+                discount: { rate: 33, price: 219.99 },
+              }}
+            />
+          </CartContext.Provider>
         </ProductPage>
       </Container>
 
@@ -93,6 +107,6 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
       </Container>
     </MainContainer>
   );
-}
+};
 
 export default App;
