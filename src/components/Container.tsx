@@ -24,11 +24,13 @@ const Container: React.FC<Props> = ({
     ${!nomargin ? 'xl:my-8 lg:my-8' : ''}
     ${!nobg ? 'bg-white lg:rounded-xl' : ''}
     ${center ? 'w-full md:mx-auto' : ''}
-    ${className || ''}`}
+    ${className}`}
     style={style}
   >
     {children}
   </div>
 );
+
+Container.defaultProps = { className: '' };
 
 export default Container;

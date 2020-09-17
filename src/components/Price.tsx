@@ -15,8 +15,6 @@ const Price: React.FC<Props> = ({ price, discount }) => (
       </HighlightContainer>
       {discount && (
         // Discounted price
-        // <div className="h-full inline-flex  justify-center items-center rounded-lg  px-3">
-        // </div>
         <HighlightContainer className="text-green-600" nobg nocolor>
           {discount.price} TL
         </HighlightContainer>
