@@ -2,13 +2,6 @@ import React, { useState } from 'react';
 import MainContainer from './components/MainContainer';
 import './style/custom.css';
 import './style/tailwind.output.css';
-import Navbar from './components/Navbar';
-import Logo from './components/Logo';
-import Navmenu from './components/Navmenu';
-import NavItem from './components/NavItem';
-import Searchbar from './components/Searchbar';
-import Cart from './components/Cart';
-import Profile from './components/Profile';
 import CategoryBar from './components/CategoryBar';
 import ProductPage from './components/ProductPage';
 import Carousel from './components/Carousel';
@@ -18,6 +11,7 @@ import Comment from './components/Comment';
 import CartContext from './context/CartContext';
 import Product from './types/Product';
 import Markdown from 'react-markdown';
+import Layout from './components/Layout';
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<Product[]>([]);
@@ -25,52 +19,36 @@ const App: React.FC = () => {
   return (
     <MainContainer>
       <Container center>
-        <Navbar>
-          <Logo />
-          <Navmenu>
-            <NavItem>Women</NavItem>
-            <NavItem>Men</NavItem>
-            <NavItem>Children</NavItem>
-            <Searchbar />
-            {/* In production, I would get count property initialy from API, 
-          propably with seperate Auth component which would fetch User from API and
-          store the User in Context API or Redux Store */}
-            <CartContext.Provider value={{ cart, setCart }}>
-              <Cart count={cart.length} />
-            </CartContext.Provider>
-          </Navmenu>
-          {/* I have manually added ml-6 here. Because initially this component was in Navmenu
-but Navmenu has overflow-hidden css. So it was blocking this component's shadow. */}
-          <Profile className="ml-6 hidden md:inline-block " />
-        </Navbar>
-        {/* In production, I would get trail property from history from React Router */}
-        <CategoryBar trail={['home', 'men', 'sneaker']} />
-        <ProductPage>
-          <Carousel
-            images={[
-              'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
-              'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
-              'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
-            ]}
-          />
-          <CartContext.Provider value={{ cart, setCart }}>
-            <Details
-              product={{
-                id: 'dgsnk016-003',
-                name: 'Lost In Space',
-                seller: 'DOGO Store',
-                availableSizes: [41, 42, 43],
-                images: [
+        <CartContext.Provider value={{ cart, setCart }}>
+          <Layout>
+            {/* In production, I would get trail property from history from React Router */}
+            <CategoryBar trail={['home', 'men', 'sneaker']} />
+            <ProductPage>
+              <Carousel
+                images={[
                   'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
                   'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
                   'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
-                ],
-                price: 419.99,
-                discount: { rate: 33, price: 219.99 },
-              }}
-            />
-          </CartContext.Provider>
-        </ProductPage>
+                ]}
+              />
+              <Details
+                product={{
+                  id: 'dgsnk016-003',
+                  name: 'Lost In Space',
+                  seller: 'DOGO Store',
+                  availableSizes: [41, 42, 43],
+                  images: [
+                    'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
+                    'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
+                    'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
+                  ],
+                  price: 419.99,
+                  discount: { rate: 33, price: 219.99 },
+                }}
+              />
+            </ProductPage>
+          </Layout>
+        </CartContext.Provider>
       </Container>
 
       <Container
