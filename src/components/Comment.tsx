@@ -10,7 +10,7 @@ const Comment: React.FC<Props> = ({ comment }) => (
   <div className="w-full flex flex-col">
     {/* Comment header */}
     <div className="w-full flex flex-row">
-      <Profile image={comment.image} />
+      <Profile image={comment.image} nomenu />
       <div className="h-12 flex items-center ml-5 font-sans font-bold text-lg">{comment.name}</div>
       <div className="flex-auto">
         <div className="ml-auto w-10 h-full flex items-center justify-center text-lg">

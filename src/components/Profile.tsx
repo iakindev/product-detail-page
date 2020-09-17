@@ -6,9 +6,10 @@ import ProfileMenu from './ProfileMenu';
 interface Props {
   className?: string;
   image: string;
+  nomenu?: boolean;
 }
 
-const Profile: React.FC<Props> = ({ className, image }) => {
+const Profile: React.FC<Props> = ({ className, image, nomenu }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -34,27 +35,28 @@ const Profile: React.FC<Props> = ({ className, image }) => {
       >
         <img src={image} alt="profile" />
       </button>
-
-      <StyledMenu
-        id="simple-menu"
-        className="hidden sm:hidden md:block"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        // Anchor's connection point
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        // Connects with anchor from top right
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-      >
-        <ProfileMenu />
-      </StyledMenu>
+      {!nomenu && (
+        <StyledMenu
+          id="simple-menu"
+          className="hidden sm:hidden md:block"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          // Anchor's connection point
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          // Connects with anchor from top right
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+        >
+          <ProfileMenu />
+        </StyledMenu>
+      )}
     </>
   );
 };
