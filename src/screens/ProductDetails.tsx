@@ -7,20 +7,23 @@ import Container from '../components/Container';
 import Comment from '../components/Comment';
 import Markdown from 'react-markdown';
 import Layout from '../components/Layout';
+import Product from '../types/Product';
 
 const ProductDetails: React.FC = () => {
   // Mock data
-  const product = {
+  const product: Product = {
     id: 'dgsnk016-003',
     name: 'Lost In Space',
     seller: 'DOGO Store',
     availableSizes: [41, 42, 43],
+    inStock: 7,
     images: [
       'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
       'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
       'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
     ],
     price: 419.99,
+
     discount: { rate: 33, price: 219.99 },
   };
 
