@@ -31,6 +31,7 @@ const ProductDetails: React.FC = () => {
       points: 9,
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a tortor id urna consectetur sollicitudin. Quisque gravida blandit tempus. Fusce convallis gravida arcu sed sagittis. Curabitur augue leo, egestas vitae pretium convallis, ultricies eu erat. Vestibulum sed lorem venenatis, dapibus arcu et, vehicula orci.',
+      image: 'https://randomuser.me/api/portraits/women/46.jpg',
     },
     {
       name: 'Maria King',
@@ -38,6 +39,7 @@ const ProductDetails: React.FC = () => {
       points: 7,
       content:
         'Aenean laoreet, massa non suscipit dignissim, nunc lacus euismod metus, posuere dignissim velit magna at ipsum. Duis id dolor condimentum urna pulvinar commodo. Ut tempor mi at elit molestie euismod. Phasellus tempus, ante nec commodo consequat, nisi justo placerat mauris, vel ultricies risus lectus quis massa.',
+      image: 'https://randomuser.me/api/portraits/women/82.jpg',
     },
   ];
 

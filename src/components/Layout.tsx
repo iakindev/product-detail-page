@@ -29,7 +29,10 @@ const Layout: React.FC = ({ children }) => {
         </Navmenu>
         {/* I have manually added ml-6 here. Because initially this component was in Navmenu
 but Navmenu has overflow-hidden css. So it was blocking this component's shadow. */}
-        <Profile className="ml-6 hidden md:inline-block " />
+        <Profile
+          image="https://randomuser.me/api/portraits/men/28.jpg"
+          className="ml-6 hidden md:inline-block "
+        />
       </Navbar>
       {children}
     </>
