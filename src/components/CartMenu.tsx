@@ -11,12 +11,14 @@ const CartMenu: React.FC = () => {
     <div className="py-1 focus:outline-none flex flex-col gap-4">
       <div className="text-2xl h-12">
         <span className="font-bold">Your Cart</span>
+        {/* Item count in cart */}
         <HighlightContainer className="ml-5 font-bold">{cart?.length}</HighlightContainer>
       </div>
       {cart?.map((item, i) => {
-        return <CartItem product={item} />;
+        return <CartItem key={`${i}-${item.id}`} product={item} />;
       })}
       {cart && cart?.length > 0 && (
+        // Used div instead of <> so it'll inherit flex
         <div>
           <BigButton
             nobg

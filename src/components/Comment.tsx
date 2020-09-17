@@ -14,6 +14,7 @@ const Comment: React.FC<Props> = ({ comment }) => (
       <div className="h-12 flex items-center ml-5 font-sans font-bold text-lg">{comment.name}</div>
       <div className="flex-auto">
         <div className="ml-auto w-10 h-full flex items-center justify-center text-lg">
+          {/* Points */}
           <HighlightContainer className="font-sans font-bold">
             <span className="text-2xl">{comment.points}</span>
             <span className="text-xl font-medium px-1 text-purple-400">/</span>
@@ -22,8 +23,10 @@ const Comment: React.FC<Props> = ({ comment }) => (
         </div>
       </div>
     </div>
+    {/* Comment title */}
     <h3 className="font-sans font-bold mt-3 text-xl">{comment.title}</h3>
-    <p className="mt-1 text-lg">{comment.content}</p>
+    {/* Comment itself */}
+    <p className="mt-1 text-lg text-gray-700">{comment.content}</p>
   </div>
 );
 

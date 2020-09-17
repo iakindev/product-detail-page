@@ -21,6 +21,8 @@ const Details: React.FC<Props> = ({ product }) => {
       <Price price={product.price} discount={product.discount} />
       <AvailableSizes sizes={product.availableSizes} state={{ size, setSize }} />
       <BigButton
+        // If user not selected a size make it's opacity 50 and show not allowed cursor when hovered.
+        // If user selected a size change it's color when hovered
         className={`${!size ? 'opacity-50 cursor-not-allowed' : 'hover:bg-purple-600'}`}
         onClick={() => {
           if (size) {

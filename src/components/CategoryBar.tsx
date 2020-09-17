@@ -13,11 +13,13 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
         // I decided to use React.Fragment instead
         <React.Fragment key={`category-${i}`}>
           <button
-            className="text-lg tracking-wider font-bold font-mono inline text-gray-600 hover:text-gray-500"
+            className="text-lg tracking-wider font-bold font-mono inline text-gray-600 hover:text-gray-500 focus:outline-none"
             onClick={() => alert(`Clicked ${category}`)}
           >
             {category.toUpperCase()}
           </button>
+
+          {/* Basically if its the last item don't insert ">" */}
           {i + 1 !== trail.length && (
             <span className="px-2" style={{ color: '#6E757F' }}>
               {/* ">" */}

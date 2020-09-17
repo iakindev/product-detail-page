@@ -4,6 +4,9 @@ interface Props {
   className?: string;
   onClick?: () => void;
   style?: CSSProperties;
+  // These props exist because I couldn't change the background or color with tailwind,
+  // unless I pass these and deactivate corresponding classes
+  // I could do with style but... who wants to do that?!
   nobg?: boolean;
   nocolor?: boolean;
 }

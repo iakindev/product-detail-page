@@ -5,7 +5,9 @@ interface Props {
 }
 
 const Profile: React.FC<Props> = ({ className }) => (
-  <button className={`h-12 w-12 rounded-md shadow-2xl overflow-hidden ${className}`}>
+  <button
+    className={`h-12 w-12 rounded-md shadow-2xl overflow-hidden focus:outline-none ${className}`}
+  >
     <img src="https://via.placeholder.com/150" alt="profile" />
   </button>
 );
