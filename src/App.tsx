@@ -15,7 +15,8 @@ import Carousel from './components/Carousel';
 import Details from './components/Details';
 import Container from './components/Container';
 import Comment from './components/Comment';
-import CartContext, { Product } from './context/CartContext';
+import CartContext from './context/CartContext';
+import Product from './types/Product';
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<Product[]>([]);
