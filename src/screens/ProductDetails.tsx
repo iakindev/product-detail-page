@@ -9,6 +9,38 @@ import Markdown from 'react-markdown';
 import Layout from '../components/Layout';
 
 const ProductDetails: React.FC = () => {
+  // Mock data
+  const product = {
+    id: 'dgsnk016-003',
+    name: 'Lost In Space',
+    seller: 'DOGO Store',
+    availableSizes: [41, 42, 43],
+    images: [
+      'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
+      'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
+      'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
+    ],
+    price: 419.99,
+    discount: { rate: 33, price: 219.99 },
+  };
+
+  const comments = [
+    {
+      name: 'Austen Atkinson',
+      title: 'Title',
+      points: 9,
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a tortor id urna consectetur sollicitudin. Quisque gravida blandit tempus. Fusce convallis gravida arcu sed sagittis. Curabitur augue leo, egestas vitae pretium convallis, ultricies eu erat. Vestibulum sed lorem venenatis, dapibus arcu et, vehicula orci.',
+    },
+    {
+      name: 'Maria King',
+      title: 'Title',
+      points: 7,
+      content:
+        'Aenean laoreet, massa non suscipit dignissim, nunc lacus euismod metus, posuere dignissim velit magna at ipsum. Duis id dolor condimentum urna pulvinar commodo. Ut tempor mi at elit molestie euismod. Phasellus tempus, ante nec commodo consequat, nisi justo placerat mauris, vel ultricies risus lectus quis massa.',
+    },
+  ];
+
   return (
     <>
       <Container center>
@@ -16,28 +48,8 @@ const ProductDetails: React.FC = () => {
           {/* In production, I would get trail property from history from React Router */}
           <CategoryBar trail={['home', 'men', 'sneaker']} />
           <ProductPage>
-            <Carousel
-              images={[
-                'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
-                'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
-                'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
-              ]}
-            />
-            <Details
-              product={{
-                id: 'dgsnk016-003',
-                name: 'Lost In Space',
-                seller: 'DOGO Store',
-                availableSizes: [41, 42, 43],
-                images: [
-                  'https://www.dogostore.com/images/thumbs/0012583_lost-in-space.jpg',
-                  'https://www.dogostore.com/images/thumbs/0012582_lost-in-space.jpg',
-                  'https://www.dogostore.com/images/thumbs/0012584_lost-in-space.jpg',
-                ],
-                price: 419.99,
-                discount: { rate: 33, price: 219.99 },
-              }}
-            />
+            <Carousel images={product.images} />
+            <Details product={product} />
           </ProductPage>
         </Layout>
       </Container>
@@ -53,24 +65,10 @@ const ProductDetails: React.FC = () => {
           className="flex flex-col gap-6 md:rounded-tr-xl"
           style={{ flexBasis: '39%' }}
         >
-          <Comment
-            comment={{
-              name: 'Austen Atkinson',
-              title: 'Title',
-              points: 9,
-              content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a tortor id urna consectetur sollicitudin. Quisque gravida blandit tempus. Fusce convallis gravida arcu sed sagittis. Curabitur augue leo, egestas vitae pretium convallis, ultricies eu erat. Vestibulum sed lorem venenatis, dapibus arcu et, vehicula orci.',
-            }}
-          />
-          <Comment
-            comment={{
-              name: 'Maria King',
-              title: 'Title',
-              points: 7,
-              content:
-                'Aenean laoreet, massa non suscipit dignissim, nunc lacus euismod metus, posuere dignissim velit magna at ipsum. Duis id dolor condimentum urna pulvinar commodo. Ut tempor mi at elit molestie euismod. Phasellus tempus, ante nec commodo consequat, nisi justo placerat mauris, vel ultricies risus lectus quis massa.',
-            }}
-          />
+          {/* Render comments */}
+          {comments.map((comment, i) => {
+            return <Comment key={`comment-${i}`} comment={comment} />;
+          })}
         </Container>
         <Container className="flex-start md:rounded-tl-xl" nomargin style={{ flexBasis: '59%' }}>
           <h3 className="font-bold text-xl pb-3 mb-2 border-b-2">Description</h3>
