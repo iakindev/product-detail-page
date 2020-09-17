@@ -2,6 +2,7 @@
   "name": "product-detail-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://iakindev.github.io/product-detail-page/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -29,7 +30,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "gen-icon-components": "svgr --typescript src/assets --icon --replace-attr-values \"#000=currentColor\" -d src/components/icons"
+    "gen-icon-components": "svgr --typescript src/assets --icon --replace-attr-values \"#000=currentColor\" -d src/components/icons",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@svgr/cli": "^5.4.0"
+    "@svgr/cli": "^5.4.0",
+    "gh-pages": "^3.1.0"
   }
 }
