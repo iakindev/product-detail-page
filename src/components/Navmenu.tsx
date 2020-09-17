@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, Search } from './icons';
+import { Search } from './icons';
+import MobileMenu from './MobileMenu';
 
 const Navmenu: React.FC = ({ children }) => (
   <ul className="ml-auto list-none flex flex-wrap justify-between space-x-6 overflow-hidden h-full">
@@ -11,7 +12,7 @@ const Navmenu: React.FC = ({ children }) => (
     </li>
     <li className="inline-block md:hidden w-auto">
       <button className="text-2xl h-full text-nav-gray">
-        <Menu />
+        <MobileMenu />
       </button>
     </li>
   </ul>
