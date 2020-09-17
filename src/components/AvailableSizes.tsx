@@ -6,7 +6,7 @@ interface Props {
 }
 const AvailableSizes: React.FC<Props> = ({ sizes, state }) => (
   <div className="mt-5">
-    <h4 className={`font-sans subpixel-antialiased font-semibold mb-2`}>Available Sizes</h4>
+    <h4 className={`font-sans font-semibold mb-2`}>Available Sizes</h4>
     <div className={`flex flex-wrap justify-between`}>
       {sizes.map((size, i) => {
         return (

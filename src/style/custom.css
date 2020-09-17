@@ -1,5 +1,7 @@
 html {
   background-color: #d7dbe7;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 .text-nav-gray {

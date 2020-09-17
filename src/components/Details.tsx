@@ -11,8 +11,8 @@ const Details: React.FC<Props> = ({ product }) => {
 
   return (
     <div className="md:pl-16 flex flex-col">
-      <h3 className="font-sans subpixel-antialiased text-5xl font-bold">{product.title}</h3>
-      <h4 className="font-mono subpixel-antialiased text-xl font-normal">
+      <h3 className="font-sans text-5xl font-bold">{product.title}</h3>
+      <h4 className="font-mono text-xl font-normal">
         <div>
           <span className="text-gray-700">BY</span>
           <button

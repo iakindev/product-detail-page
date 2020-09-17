@@ -25,7 +25,7 @@ const Carousel: React.FC<Props> = ({ images }) => {
           );
         })}
       </Slider>
-      <div className="justify-between sm:w-full md:w-full grid grid-cols-3 gap-8">
+      <div className="flex justify-between gap-8 w-full">
         {/* For thumbnails */}
         {images.map((image, index) => {
           return (
@@ -38,8 +38,6 @@ const Carousel: React.FC<Props> = ({ images }) => {
           );
         })}
       </div>
-      {/* <ButtonBack>Back</ButtonBack>
-          <ButtonNext>Next</ButtonNext> */}
     </CarouselProvider>
   );
 };

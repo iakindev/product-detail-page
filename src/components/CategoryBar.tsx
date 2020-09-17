@@ -10,7 +10,7 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
       return (
         <>
           <button
-            className="text-lg tracking-wider font-bold font-mono subpixel-antialiased inline text-gray-600 hover:text-gray-500"
+            className="text-lg tracking-wider font-bold font-mono inline text-gray-600 hover:text-gray-500"
             onClick={() => alert(`Clicked ${category}`)}
           >
             {category.toUpperCase()}
