@@ -25,7 +25,7 @@
   "scripts": {
     "build:tailwind": "tailwindcss build src/style/tailwind.css -o src/style/tailwind.output.css",
     "prestart": "yarn build:tailwind",
-    "prebuild": "yarn build:tailwind",
+    "prebuild": "NODE_ENV=production yarn build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
