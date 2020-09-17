@@ -1,8 +1,9 @@
 import React from 'react';
 import Profile from './Profile';
+import HighlightContainer from './HighlightContainer';
 
 interface Props {
-  comment: { name: string; title: string; point: number; content: string };
+  comment: { name: string; title: string; points: number; content: string };
 }
 
 const Comment: React.FC<Props> = ({ comment }) => (
@@ -13,7 +14,9 @@ const Comment: React.FC<Props> = ({ comment }) => (
       <div className="h-12 flex items-center ml-5 font-sans font-bold text-lg">{comment.name}</div>
       <div className="flex-auto">
         <div className="ml-auto w-10 h-full flex items-center justify-center text-lg">
-          {comment.point}/10
+          <HighlightContainer className="text-2xl font-sans font-bold">
+            {comment.points}/10
+          </HighlightContainer>
         </div>
       </div>
     </div>

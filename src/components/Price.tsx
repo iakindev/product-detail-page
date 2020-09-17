@@ -1,4 +1,5 @@
 import React from 'react';
+import HighlightContainer from './HighlightContainer';
 
 interface Props {
   price: number;
@@ -9,21 +10,24 @@ const Price: React.FC<Props> = ({ price, discount }) => (
   <>
     <div className="h-16 flex mt-2 text-2xl font-sans font-bold">
       {/* Initial price */}
-      <div className="h-full bg-purple-100 inline-flex justify-center items-center rounded-lg text-purple-700 px-3">
-        <span className={`${discount ? 'line-through' : ''}`}>{price} TL</span>
-      </div>
+      <HighlightContainer className={`${discount ? 'line-through' : ''}`}>
+        {price} TL
+      </HighlightContainer>
       {discount && (
         // Discounted price
-        <div className="h-full inline-flex  justify-center items-center rounded-lg text-green-600 px-3">
+        // <div className="h-full inline-flex  justify-center items-center rounded-lg  px-3">
+        // </div>
+        <HighlightContainer className="text-green-600" nobg nocolor>
           {discount.price} TL
-        </div>
+        </HighlightContainer>
       )}
     </div>
-    {
-      <div className="h-12 flex items-center justify-center font-mono bg-blue-100 rounded-lg mt-2">
+    {/* Discount Rate */}
+    <div className="h-12 rounded-lg mt-2">
+      <HighlightContainer nobg nocolor className="font-mono bg-blue-100 w-full font-semibold">
         Discount: -%{discount?.rate}
-      </div>
-    }
+      </HighlightContainer>
+    </div>
   </>
 );
 

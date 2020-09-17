@@ -72,7 +72,7 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
             comment={{
               name: 'Austen Atkinson',
               title: 'Title',
-              point: 9,
+              points: 9,
               content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a tortor id urna consectetur sollicitudin. Quisque gravida blandit tempus. Fusce convallis gravida arcu sed sagittis. Curabitur augue leo, egestas vitae pretium convallis, ultricies eu erat. Vestibulum sed lorem venenatis, dapibus arcu et, vehicula orci.',
             }}
@@ -81,7 +81,7 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
             comment={{
               name: 'Maria King',
               title: 'Title',
-              point: 7,
+              points: 7,
               content:
                 'Aenean laoreet, massa non suscipit dignissim, nunc lacus euismod metus, posuere dignissim velit magna at ipsum. Duis id dolor condimentum urna pulvinar commodo. Ut tempor mi at elit molestie euismod. Phasellus tempus, ante nec commodo consequat, nisi justo placerat mauris, vel ultricies risus lectus quis massa.',
             }}
