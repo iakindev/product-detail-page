@@ -58,12 +58,16 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
       </Container>
 
       <Container
-        className="flex flex-col-reverse md:flex-row md:flex-wrap justify-between lg:mt-0 xl:mt-0"
+        className="flex flex-col-reverse md:flex-row md:flex-wrap justify-between mt-0 md:mt-5 lg:mt-0 xl:mt-0"
         center
         nobg
         nopadding
       >
-        <Container nomargin className="flex flex-col gap-6" style={{ flexBasis: '39%' }}>
+        <Container
+          nomargin
+          className="flex flex-col gap-6 md:rounded-tr-xl"
+          style={{ flexBasis: '39%' }}
+        >
           <Comment
             comment={{
               name: 'Austen Atkinson',
@@ -83,7 +87,7 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
             }}
           />
         </Container>
-        <Container className="flex-start" nomargin style={{ flexBasis: '59%' }}>
+        <Container className="flex-start md:rounded-tl-xl" nomargin style={{ flexBasis: '59%' }}>
           Description will come here
         </Container>
       </Container>
