@@ -14,6 +14,7 @@ import ProductPage from './components/ProductPage';
 import Carousel from './components/Carousel';
 import Details from './components/Details';
 import Container from './components/Container';
+import Comment from './components/Comment';
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
           store the User in Context API or Redux Store */}
             <Cart count={0} />
           </Navmenu>
-          <Profile />
+          {/* I have manually added ml-6 here. Because initially this component was in Navmenu
+but Navmenu has overflow-hidden css. So it was blocking this component's shadow. */}
+          <Profile className="ml-6 hidden md:inline-block " />
         </Navbar>
         {/* In production, I would get trail property from history from React Router */}
         <CategoryBar trail={['home', 'men', 'sneaker']} />
@@ -60,8 +63,25 @@ function App() {
         nobg
         nopadding
       >
-        <Container nomargin style={{ flexBasis: '39%' }}>
-          Comments will come here
+        <Container nomargin className="flex flex-col gap-6" style={{ flexBasis: '39%' }}>
+          <Comment
+            comment={{
+              name: 'Austen Atkinson',
+              title: 'Title',
+              point: 9,
+              content:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a tortor id urna consectetur sollicitudin. Quisque gravida blandit tempus. Fusce convallis gravida arcu sed sagittis. Curabitur augue leo, egestas vitae pretium convallis, ultricies eu erat. Vestibulum sed lorem venenatis, dapibus arcu et, vehicula orci.',
+            }}
+          />
+          <Comment
+            comment={{
+              name: 'Maria King',
+              title: 'Title',
+              point: 7,
+              content:
+                'Aenean laoreet, massa non suscipit dignissim, nunc lacus euismod metus, posuere dignissim velit magna at ipsum. Duis id dolor condimentum urna pulvinar commodo. Ut tempor mi at elit molestie euismod. Phasellus tempus, ante nec commodo consequat, nisi justo placerat mauris, vel ultricies risus lectus quis massa.',
+            }}
+          />
         </Container>
         <Container className="flex-start" nomargin style={{ flexBasis: '59%' }}>
           Description will come here
