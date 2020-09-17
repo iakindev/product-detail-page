@@ -24,11 +24,13 @@ const CartMenu: React.FC = () => {
             nobg
             nocolor
             className="mx-1 border-2 text-gray-500 border-gray-500 hover:bg-gray-200"
-            onClick={() => alert(cart)}
           >
             View cart
           </BigButton>
-          <BigButton className="mx-1 hover:bg-purple-600" onClick={() => alert(cart)}>
+          <BigButton
+            className="mx-1 hover:bg-purple-600"
+            onClick={() => alert(JSON.stringify(cart, null, 4))}
+          >
             Checkout
           </BigButton>
         </div>
