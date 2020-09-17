@@ -12,7 +12,7 @@ const Details: React.FC<Props> = ({ product }) => {
   const [size, setSize] = useState<number | undefined>();
 
   return (
-    <div className="md:pl-16 flex flex-col">
+    <div className="md:pl-16 md:pr-16 flex flex-col">
       <h3 className="font-sans text-5xl font-bold">{product.title}</h3>
       <SellerInfo name="DOGO Store" />
       <Price price={419.99} discount={{ rate: 33, price: 279.99 }} />
