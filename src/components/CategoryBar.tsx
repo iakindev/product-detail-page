@@ -8,7 +8,7 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
   <div className="mt-8">
     {trail.map((category, i) => {
       return (
-        <>
+        <React.Fragment key={`category-${i}`}>
           <button
             className="text-lg tracking-wider font-bold font-mono inline text-gray-600 hover:text-gray-500"
             onClick={() => alert(`Clicked ${category}`)}
@@ -20,7 +20,7 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
               &gt;
             </span>
           )}
-        </>
+        </React.Fragment>
       );
     })}
   </div>

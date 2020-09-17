@@ -19,7 +19,7 @@ const Carousel: React.FC<Props> = ({ images }) => {
         {/* For slides */}
         {images.map((image, index) => {
           return (
-            <Slide index={index} className="flex items-center">
+            <Slide key={`slide-${index}`} index={index} className="flex items-center">
               <ImageFadeIn src={image} className="object-contain w-full h-full inline-block" />
             </Slide>
           );
@@ -30,6 +30,7 @@ const Carousel: React.FC<Props> = ({ images }) => {
         {images.map((image, index) => {
           return (
             <Dot
+              key={`slide-thumb-${index}`}
               slide={index}
               className="mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-2lg overflow-hidden shadow-2xl"
             >
