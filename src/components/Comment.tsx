@@ -14,8 +14,10 @@ const Comment: React.FC<Props> = ({ comment }) => (
       <div className="h-12 flex items-center ml-5 font-sans font-bold text-lg">{comment.name}</div>
       <div className="flex-auto">
         <div className="ml-auto w-10 h-full flex items-center justify-center text-lg">
-          <HighlightContainer className="text-2xl font-sans font-bold">
-            {comment.points}/10
+          <HighlightContainer className="font-sans font-bold">
+            <span className="text-2xl">{comment.points}</span>
+            <span className="text-xl font-medium px-1 text-purple-400">/</span>
+            <span className="text-lg text-purple-400">10</span>
           </HighlightContainer>
         </div>
       </div>
