@@ -17,6 +17,7 @@ import Container from './components/Container';
 import Comment from './components/Comment';
 import CartContext from './context/CartContext';
 import Product from './types/Product';
+import Markdown from 'react-markdown';
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<Product[]>([]);
@@ -103,7 +104,9 @@ but Navmenu has overflow-hidden css. So it was blocking this component's shadow.
           />
         </Container>
         <Container className="flex-start md:rounded-tl-xl" nomargin style={{ flexBasis: '59%' }}>
-          Description will come here
+          <h3 className="font-bold text-xl pb-3 mb-2 border-b-2">Description</h3>
+          {/* In real world we'd probably source a markdown file, so why not here too */}
+          <Markdown source="**Lorem ipsum** *dolor* sit amet, consectetur adipiscing elit. Nunc tempor tellus ac placerat scelerisque. Etiam sollicitudin velit lacus, at rhoncus felis pellentesque in." />
         </Container>
       </Container>
     </MainContainer>
