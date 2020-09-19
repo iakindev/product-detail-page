@@ -3,15 +3,15 @@ import { Search } from './icons';
 import MobileMenu from './MobileMenu';
 
 const Navmenu: React.FC = ({ children }) => (
-  <ul className="ml-auto list-none flex flex-wrap justify-between space-x-6 overflow-hidden h-full">
+  <ul className="flex flex-wrap justify-between h-full ml-auto space-x-6 overflow-hidden list-none">
     {children}
-    <li className="inline-block md:hidden w-auto">
-      <button className="text-2xl h-full text-nav-gray text-black">
+    <li className="md:hidden inline-block w-auto">
+      <button className="text-nav-gray h-full text-2xl text-black">
         <Search />
       </button>
     </li>
-    <li className="inline-block md:hidden w-auto">
-      <button className="text-2xl h-full text-nav-gray">
+    <li className="md:hidden inline-block w-auto">
+      <button className="text-nav-gray h-full text-2xl">
         <MobileMenu />
       </button>
     </li>

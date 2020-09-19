@@ -38,7 +38,7 @@ const Profile: React.FC<Props> = ({ className, image, nomenu }) => {
       {!nomenu && (
         <StyledMenu
           id="simple-menu"
-          className="hidden sm:hidden md:block"
+          className="sm:hidden md:block hidden"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}

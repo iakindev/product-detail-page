@@ -7,16 +7,16 @@ interface Props {
 }
 
 const CartItem: React.FC<Props> = ({ product }) => (
-  <div className="h-24 flex">
+  <div className="flex h-24">
     {/* Image container */}
-    <div className="h-full w-24 flex items-center justify-center shadow-2xl rounded-2lg overflow-hidden bg-white">
-      <img className="h-full object-contain" src={product.images[0]} alt={product.name} />
+    <div className="rounded-2lg flex items-center justify-center w-24 h-full overflow-hidden bg-white shadow-2xl">
+      <img className="object-contain h-full" src={product.images[0]} alt={product.name} />
     </div>
     {/* Product details */}
-    <div className="flex flex-col ml-4 flex-1">
+    <div className="flex flex-col flex-1 ml-4">
       <div className="text-xl font-bold">{product.name}</div>
-      <div className="flex h-12 items-center justify-between w-full">
-        <div className="font-bold text-gray-500 p-2">Size: {product.selectedSize}</div>
+      <div className="flex items-center justify-between w-full h-12">
+        <div className="p-2 font-bold text-gray-500">Size: {product.selectedSize}</div>
         <HighlightContainer className="font-bold">
           {/* Show discounted price if there is a discount */}
           {product.discount?.price || product.price} TL

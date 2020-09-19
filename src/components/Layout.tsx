@@ -31,7 +31,7 @@ const Layout: React.FC = ({ children }) => {
 but Navmenu has overflow-hidden css. So it was blocking this component's shadow. */}
         <Profile
           image="https://randomuser.me/api/portraits/men/28.jpg"
-          className="ml-6 hidden md:inline-block "
+          className="md:inline-block  hidden ml-6"
         />
       </Navbar>
       {children}

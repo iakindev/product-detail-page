@@ -8,8 +8,8 @@ const CartMenu: React.FC = () => {
   const { cart } = useContext(CartContext);
 
   return (
-    <div className="py-1 focus:outline-none flex flex-col gap-4">
-      <div className="text-2xl h-12">
+    <div className="focus:outline-none flex flex-col gap-4 py-1">
+      <div className="h-12 text-2xl">
         <span className="font-bold">Your Cart</span>
         {/* Item count in cart */}
         <HighlightContainer className="ml-5 font-bold">{cart?.length}</HighlightContainer>
@@ -23,12 +23,12 @@ const CartMenu: React.FC = () => {
           <BigButton
             nobg
             nocolor
-            className="mx-1 border-2 text-gray-500 border-gray-500 hover:bg-gray-200"
+            className="hover:bg-gray-200 mx-1 text-gray-500 border-2 border-gray-500"
           >
             View cart
           </BigButton>
           <BigButton
-            className="mx-1 hover:bg-purple-600"
+            className="hover:bg-purple-600 mx-1"
             onClick={() => alert(JSON.stringify(cart, null, 4))}
           >
             Checkout

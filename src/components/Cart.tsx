@@ -31,27 +31,26 @@ const Cart: React.FC<Props> = ({ count }) => {
   return (
     <>
       <button
-        className="h-full border rounded-md text-2xl items-center pl-2 pr-2 hidden sm:hidden md:flex 
-        text-gray-500 hover:text-gray-600 hover:bg-indigo-100 transition-colors duration-200 focus:outline-none"
+        className="sm:hidden md:flex hover:text-gray-600 hover:bg-indigo-100 focus:outline-none items-center hidden h-full pl-2 pr-2 text-2xl text-gray-500 transition-colors duration-200 border rounded-md"
         onClick={handleClick}
       >
         <Basket className="text-indigo-700" />
-        <span className="text-base px-2">{count}</span>
+        <span className="px-2 text-base">{count}</span>
       </button>
 
       <StyledMenu
         id="simple-menu"
-        className="hidden sm:hidden md:block"
+        className="sm:hidden md:block hidden"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
-        onClose={handleClose}
-        // Anchor's connection point
+        onClose={handleClose} 
+        // Anchor's connect
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',
-        }}
-        // Connects with anchor from top right
+        }} 
+        // Connects with anchor from
         transformOrigin={{
           vertical: 'top',
           horizontal: 'right',
@@ -62,5 +61,4 @@ const Cart: React.FC<Props> = ({ count }) => {
     </>
   );
 };
-
 export default Cart;

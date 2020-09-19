@@ -19,7 +19,7 @@ const Details: React.FC<Props> = ({ product }) => {
       <h3 className="font-sans text-5xl font-bold">{product.name}</h3>
       <SellerInfo name="DOGO Store" />
       <Price price={product.price} discount={product.discount} />
-      <h4 className="mt-6 font-bold font-xl text-gray-600">In stock: {product.inStock}</h4>
+      <h4 className="font-xl mt-6 font-bold text-gray-600">In stock: {product.inStock}</h4>
       <AvailableSizes sizes={product.availableSizes} state={{ size, setSize }} />
       <BigButton
         // If user not selected a size make it's opacity 50 and show not allowed cursor when hovered.

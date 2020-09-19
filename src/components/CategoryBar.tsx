@@ -13,7 +13,7 @@ const CategoryBar: React.FC<Props> = ({ trail }) => (
         // I decided to use React.Fragment instead
         <React.Fragment key={`category-${i}`}>
           <button
-            className="text-lg tracking-wider font-bold font-mono inline text-gray-600 hover:text-gray-500 focus:outline-none"
+            className="hover:text-gray-500 focus:outline-none inline font-mono text-lg font-bold tracking-wider text-gray-600"
             onClick={() => alert(`Clicked ${category}`)}
           >
             {category.toUpperCase()}

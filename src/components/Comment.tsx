@@ -7,24 +7,24 @@ interface Props {
 }
 
 const Comment: React.FC<Props> = ({ comment }) => (
-  <div className="w-full flex flex-col">
+  <div className="flex flex-col w-full">
     {/* Comment header */}
-    <div className="w-full flex flex-row">
+    <div className="flex flex-row w-full">
       <Profile image={comment.image} nomenu />
-      <div className="h-12 flex items-center ml-5 font-sans font-bold text-lg">{comment.name}</div>
+      <div className="flex items-center h-12 ml-5 font-sans text-lg font-bold">{comment.name}</div>
       <div className="flex-auto">
-        <div className="ml-auto w-10 h-full flex items-center justify-center text-lg">
+        <div className="flex items-center justify-center w-10 h-full ml-auto text-lg">
           {/* Points */}
           <HighlightContainer className="font-sans font-bold">
             <span className="text-2xl">{comment.points}</span>
-            <span className="text-xl font-medium px-1 text-purple-400">/</span>
+            <span className="px-1 text-xl font-medium text-purple-400">/</span>
             <span className="text-lg text-purple-400">10</span>
           </HighlightContainer>
         </div>
       </div>
     </div>
     {/* Comment title */}
-    <h3 className="font-sans font-bold mt-3 text-xl">{comment.title}</h3>
+    <h3 className="mt-3 font-sans text-xl font-bold">{comment.title}</h3>
     {/* Comment itself */}
     <p className="mt-1 text-lg text-gray-700">{comment.content}</p>
   </div>

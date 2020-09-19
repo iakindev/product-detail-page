@@ -60,14 +60,14 @@ const ProductDetails: React.FC = () => {
       </Container>
 
       <Container
-        className="flex flex-col-reverse md:flex-row md:flex-wrap justify-between mt-0 md:mt-5 lg:mt-0 xl:mt-0"
+        className="md:flex-row md:flex-wrap md:mt-5 lg:mt-0 xl:mt-0 flex flex-col-reverse justify-between mt-0"
         center
         nobg
         nopadding
       >
         <Container
           nomargin
-          className="flex flex-col gap-6 md:rounded-tr-xl"
+          className="md:rounded-tr-xl flex flex-col gap-6"
           style={{ flexBasis: '39%' }}
         >
           {/* Render comments */}
@@ -76,7 +76,7 @@ const ProductDetails: React.FC = () => {
           })}
         </Container>
         <Container className="flex-start md:rounded-tl-xl" nomargin style={{ flexBasis: '59%' }}>
-          <h3 className="font-bold text-xl pb-3 mb-2 border-b-2">Description</h3>
+          <h3 className="pb-3 mb-2 text-xl font-bold border-b-2">Description</h3>
           {/* In real world we'd probably source a markdown file, so why not here too */}
           <Markdown source="**Lorem ipsum** *dolor* sit amet, consectetur adipiscing elit. Nunc tempor tellus ac placerat scelerisque. Etiam sollicitudin velit lacus, at rhoncus felis pellentesque in." />
         </Container>

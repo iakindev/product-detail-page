@@ -8,7 +8,7 @@ interface Props {
 
 const Price: React.FC<Props> = ({ price, discount }) => (
   <>
-    <div className="h-16 flex mt-2 text-2xl font-sans font-bold">
+    <div className="flex h-16 mt-2 font-sans text-2xl font-bold">
       {/* Initial price */}
       <HighlightContainer className={`${discount ? 'line-through' : ''}`}>
         {price} TL
@@ -22,8 +22,8 @@ const Price: React.FC<Props> = ({ price, discount }) => (
     </div>
     {/* Discount Rate */}
     {discount && (
-      <div className="h-12 rounded-lg mt-2">
-        <HighlightContainer nobg nocolor className="font-mono bg-blue-100 w-full font-semibold">
+      <div className="h-12 mt-2 rounded-lg">
+        <HighlightContainer nobg nocolor className="w-full font-mono font-semibold bg-blue-100">
           Discount: -%{discount?.rate}
         </HighlightContainer>
       </div>

@@ -3,7 +3,7 @@ import { Search } from './icons';
 
 const Searchbar: React.FC = () => (
   <div
-    className="h-full border rounded-md text-2xl items-center pl-2 pr-2 hidden md:flex"
+    className="md:flex items-center hidden h-full pl-2 pr-2 text-2xl border rounded-md"
     style={{ borderColor: '#E3E4E8' }}
   >
     <Search style={{ color: '#9EA1A8' }} />
